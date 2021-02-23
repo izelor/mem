@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-@app.route('/getmsg', method=['GET'])
+@app.route('/getmsg', methods=['GET'])
 def respond():
     name = request.args.get("name", None)
     
@@ -18,9 +18,9 @@ def respond():
     
     return jsonify(response)
 
-@app.route('/post/', method=['POST'])
+@app.route('/post/', methods=['POST'])
 def post_something():
-    param = request.from.get('name')
+    param = request.form.get('name')
     print(param)
 
     if param:
@@ -28,7 +28,7 @@ def post_something():
             "Message": f"Welcome {name} to our awesome platform!!",
             "METHOD" : "POST"
         })
-    esle:
+    else:
         return jsonify({
             "ERROR": "no name fount, please send a name."
         })
