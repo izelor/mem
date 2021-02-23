@@ -1,3 +1,7 @@
-django
+Click==7.0
+Flask
 gunicorn
-django-heroku
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
